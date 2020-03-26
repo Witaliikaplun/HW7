@@ -11,6 +11,7 @@ import java.util.List;
 public class MainTest {
 
     public static void main(String[] args) {
+
         TestingClass.start(TestingClass.class);
     }
 }
@@ -36,10 +37,10 @@ class TestingClass {
 
         for (Method m : methods)
             if (m.getAnnotation(BeforeSuite.class) != null) {
-                if (befMet != null) throw new RuntimeException("Метод с аннотацией @BeforeSuite должен быть один");
+                if (befMet != null) throw new RuntimeException("Метод с аннотацией @BeforeSuite должен быть один ");
                 befMet = m;
             } else if (m.getAnnotation(AfterSuite.class) != null) {
-                if (aftMet != null) throw new RuntimeException("Метод с аннотацией @AfterSuite должен быть один");
+                if (aftMet != null) throw new RuntimeException("Метод с аннотацией @AfterSuite должен быть один ");
                 aftMet = m;
             } else if (m.getAnnotation(Test.class) != null){
                 Test annotationTst = m.getAnnotation(Test.class);
